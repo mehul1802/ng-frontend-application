@@ -1,11 +1,11 @@
 import Layout from '@/components/layout';
-import { GetStaticProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import StarsList from '@/components/StarList/StarsList';
 import { Label, ItemWrapper, Item, ItemVal, Button } from '@/styles/SharedStyles';
-import { IQuestSingleItemProps, IRewardProps } from '@/components/Card/type';
-import { server } from '../../config';
+import { IQuestSingleItemProps, IRewardProps } from '@/types/questType';
+import { server } from '@/config';
 import {
 	SectionWrapper,
 	TitleWrapper,
@@ -20,7 +20,7 @@ import {
 } from './styles';
 
 // Generates `/quests/1` and `/quests/2`
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
 	// Call an external API endpoint to get posts
 	const res = await fetch(`${server}/api/quests`);
 	const posts = await res.json();

@@ -2,7 +2,7 @@ import { CardWrapper, CardTitle, CardContent } from './styles';
 import { Label, ItemWrapper, Item, ItemVal } from '@/styles/SharedStyles';
 import Link from 'next/link';
 import StarsList from '../StarList/StarsList';
-import { IQuestItemProps } from './type';
+import { IQuestItemProps } from '@/types/questType';
 
 export default function Card(item: IQuestItemProps) {
 	return (
