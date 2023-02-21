@@ -1,3 +1,3 @@
 const dev = process.env.NODE_ENV !== 'production';
 
-export const server = dev ? 'http://localhost:3000' : 'https://ng-frontend-application/3gvXPEASMbofEnsiDzpPHozrFS5q';
+export const server = 'http://localhost:3000';
