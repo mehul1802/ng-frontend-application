@@ -16,6 +16,8 @@ const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
 
 body {
   background-color: ${({ theme }) => theme.colors.black};
+	font-family: 'Lato', roboto;
+	margin: 0;
 }
 
 `;

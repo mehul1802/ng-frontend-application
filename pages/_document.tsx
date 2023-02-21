@@ -4,7 +4,12 @@ import { ServerStyleSheet } from 'styled-components';
 export default function NGDocument() {
 	return (
 		<Html lang='en'>
-			<Head />
+			<Head>
+				<link
+					href='https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:ital,wght@0,400;0,900;1,400&family=Courier+Prime&display=swap'
+					rel='stylesheet'
+				/>
+			</Head>
 			<body>
 				<Main />
 				<NextScript />

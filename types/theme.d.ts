@@ -3,6 +3,7 @@ import 'styled-components';
 declare module 'styled-components' {
 	export interface DefaultTheme {
 		radius: {
+			xl: string;
 			s: string;
 			m: string;
 			l: string;
@@ -36,6 +37,12 @@ declare module 'styled-components' {
 			black: string;
 			blue: string;
 			green: string;
+		};
+		size: {
+			mobile: string;
+			tablet: string;
+			laptop: string;
+			desktop: string;
 		};
 	}
 }

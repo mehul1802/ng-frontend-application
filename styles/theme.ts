@@ -27,6 +27,12 @@ export const defaultTheme = {
 		'6xl': '140px',
 		'7xl': '160px',
 		'8xl': '180px'
+	},
+	size: {
+		mobile: '320px',
+		tablet: '768px',
+		laptop: '1024px',
+		desktop: '2560px'
 	}
 };
 
