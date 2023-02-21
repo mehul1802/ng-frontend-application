@@ -1,5 +1,5 @@
 import Layout from '@/components/layout';
-import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import StarsList from '@/components/StarList/StarsList';
@@ -20,7 +20,7 @@ import {
 } from './styles';
 
 // Generates `/quests/1` and `/quests/2`
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
 	// Call an external API endpoint to get posts
 	const res = await fetch(`${server}/api/quests`);
 	const posts = await res.json();
@@ -32,11 +32,11 @@ export async function getStaticPaths() {
 
 	// { fallback: false } means other routes should 404
 	return { paths, fallback: false };
-}
+};
 
 // `getStaticPaths` requires using `getStaticProps`
-export async function getStaticProps({ params }) {
-	const res = await fetch(`${server}/api/quests/${params.id}`);
+export const getStaticProps: GetStaticProps = async (context) => {
+	const res = await fetch(`${server}/api/quests/${context?.params?.id}`);
 	const post = await res.json();
 
 	// By returning { props: { posts } }, the Blog component
@@ -46,19 +46,14 @@ export async function getStaticProps({ params }) {
 			post
 		}
 	};
-}
+};
 
 export default function Post(props: { post: IQuestSingleItemProps }) {
 	const { post } = props;
 	const router = useRouter();
 
 	return (
-		<Layout>
-			<Head>
-				<title>{post.title} | Node Guardians</title>
-				<meta name='description' content={post.description} />
-			</Head>
-
+		<Layout title={`${post.title} | Node Guradian`}>
 			{post && (
 				<SectionWrapper className='quest-single'>
 					<BannerWrapper>

@@ -28,12 +28,7 @@ function Home() {
 	const { data, status, isLoading } = useQuery({ queryKey: ['quests'], queryFn: fetchQuestListFromAPI });
 
 	return (
-		<Layout>
-			<Head>
-				<title>Node Guardians</title>
-				<meta name='description' content='Node Guardians frontend' />
-			</Head>
-
+		<Layout title='Node Guardians'>
 			<SectionWrapper>
 				{/* Implement loader with icon */}
 				{isLoading && <Loading style={{ color: '#fff' }}>Loading...</Loading>}
